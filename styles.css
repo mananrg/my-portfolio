@@ -3,10 +3,11 @@
     padding: 0;
     font-family: sans-serif;
 }
+
 body {
-    max-width: 100%;
-max-height: 100%;
+    overflow-x: hidden;
 }
+
 .hero{
     position: relative;
     width: 100%;
@@ -94,18 +95,6 @@ span{
     transition: bottom 1s, left 1s;
 }
 
-@media only screen and (max-width: 600px) {
-    
-}
-
-.images:hover .shape{
-    bottom: 40px;
-}
-
-.images:hover .girl{
-    left: 45%;
-}
-
 .social{
     margin-left: 8%;
     margin-top: 100px;
@@ -120,7 +109,33 @@ span{
 .social a:hover{
     color: orange;
 }
-.page {
- 
-    box-sizing: border-box;
+
+/* Media Query for Small Screens */
+@media only screen and (max-width: 600px) {
+    
+    nav {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .detel {
+        margin: 10% 5%;
+    }
+    
+    .detel h1 {
+        font-size: 40px;
+    }
+    
+    .images{
+        display: none;
+      }
+    
+    .social {
+        margin: 50px 5%;
+    }
 }
