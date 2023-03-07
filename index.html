@@ -1,40 +1,78 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personle Portfolio Website</title>
-    <link rel="stylesheet" href="styles.css">
-	  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="hero">
-        <nav>
-            <img src="images/logo.png" class="logo pages">
-            <ul>
-          
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">HIRE ME</a></li>
-            </ul>
-        </nav>
-        <div class="detel">
-            <h1>I,m Manan <span>Gandhi</span></h1>
-            <p>This is my official Portfolio website to showcase my all work <br> related to
-                Flutter and A.I. </p>
-            <a href="images/resume.pdf">Downdload CV</a>
-        </div>
-        <div class="images">
-            <img src="images/shape.png" class="shape pages">
-            <img src="images/men.png" class="girl pages">
-        </div>
-
-        <div class="social">
-           <a href="http://linkedin.com/in/mananrg"><i class="fab fa-linkedin"></i></a>
-           <a href="https://github.com/mananrg"><i class="fab fa-github"></i></a>
-        </div>
+      <nav class="navbar">
+        <img src="images/logo.png" class="logo pages" />
+        <ul class="nav-links">
+          <li><a href="">SERVICES</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+        </ul>
+      </nav>
+      <div class="detel">
+        <h2 style="padding-bottom: 12px">Hello&#x1F44B;,</h2>
+        <h1>
+          I'<span style="color: orange" ;>m</span> Manan <span>Gandhi</span>
+        </h1>
+        <p>
+          This is my official Portfolio website to showcase my all work <br />
+          related to Flutter and A.I.
+        </p>
+        <a href="images/resume.pdf">Downdload CV</a>
+      </div>
+      <div class="images">
+        <img src="images/shape.png" class="shapepages" />
+        <img src="images/men.png" class="menpages" />
+      </div>
+      <div class="social">
+        <a href="http://linkedin.com/in/mananrg"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/mananrg"><i class="fab fa-github"></i></a>
+      </div>
     </div>
-</body>
+
+    <div id="projects" style="height: 100%; padding-top: 100px">
+      <h1 style="text-align: center; padding-bottom: 30px; padding-top: 30px">
+        PROJECTS
+      </h1>
+      <div class="card-container" style="margin: auto; align-items: center">
+        <div class="card" style="margin-right: 30px">
+          <div class="card-image">
+            <img src="images/chatbot.png" alt="Project 1 Image" />
+            <div class="card-content">
+              <h2>ChatGPT Mobile Application</h2>
+              <p>Designed a mobile application in ChatGPT</p>
+              <i><b>Tools: </b>Flutter, Dart, Firebase, OpenAI</i>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/solarpanel.png" alt="Project 2 Image" />
+          </div>
+          <div class="card-content">
+            <h2>Solar Educational Application</h2>
+            <p>Android application made using Flutter</p>
+            <i><b>Tools: </b>Flutter, Dart</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
