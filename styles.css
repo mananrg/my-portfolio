@@ -196,6 +196,10 @@ button:hover {
 
 /* Media Query for Small Screens */
 @media only screen and (max-width: 600px) {
+  body{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
   nav {
     display: none;
   }
