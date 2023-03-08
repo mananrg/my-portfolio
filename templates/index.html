@@ -3,9 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personle Portfolio Website</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <title>Personle Portfolio Website </title>
 
     <link
       rel="stylesheet"
@@ -14,11 +12,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.png" />
+
   </head>
   <body>
     <div class="hero" style="height: 100%;">
       <nav class="navbar">
-        <img src="images/logo.png" class="logo pages" />
+        <img src="../static/images/logo.png" class="logo pages" />
         <ul class="nav-links">
           <li><a href="">SERVICES</a></li>
           <li><a href="#projects">PROJECTS</a></li>
@@ -33,11 +34,11 @@
           This is my official Portfolio website to showcase my all work <br />
           related to Flutter and A.I.
         </p>
-        <a href="images/resume.pdf">Downdload CV</a>
+        <a href="../static/images/resume.pdf">Downdload CV</a>
       </div>
       <div class="images">
-        <img src="images/shape.png" class="shapepages" />
-        <img src="images/men.png" class="menpages" />
+        <img src="../static/images/shape.png" class="shapepages" />
+        <img src="../static/images/men.png" class="menpages" />
       </div>
       <div class="social">
         <a href="http://linkedin.com/in/mananrg"
@@ -54,7 +55,7 @@
       <div class="card-container" style="margin: auto; align-items: center">
         <div class="card" style="margin-right: 30px">
           <div class="card-image">
-            <img src="images/chatbot.png" alt="Project 1 Image" />
+            <img src="../static/images/chatbot.png" alt="Project 1 Image" />
             <div class="card-content">
               <h2>ChatGPT Mobile Application</h2>
               <p>Designed a mobile application in ChatGPT</p>
@@ -64,7 +65,7 @@
         </div>
         <div class="card">
           <div class="card-image">
-            <img src="images/solarpanel.png" alt="Project 2 Image" />
+            <img src="../static/images/solarpanel.png" alt="Project 2 Image" />
           </div>
           <div class="card-content">
             <h2>Solar Educational Application</h2>
