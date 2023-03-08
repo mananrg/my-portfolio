@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  align-items: center;
 }
 
 body {
@@ -42,12 +43,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: red;
+  color:#7510F7
 }
 
 .detel {
-  margin-left: 8%;
-  margin-top: 15%;
+ /* margin-left: 8%;*/
+  margin-top: 5%;
 }
 
 .detel h1 {
@@ -57,7 +58,7 @@ nav ul li a:hover {
 }
 
 span {
-  color: orange;
+  color: #7510F7;
 }
 .menpages {
   height: 90%;
@@ -74,10 +75,10 @@ span {
   font-weight: bold;
   color: #fff;
   display: inline-block;
-  margin: 30px 0;
+ /* margin: 30px 0;*/
   border-radius: 5px;
 }
-
+/*
 .images {
   width: 45%;
   height: 70%;
@@ -94,9 +95,8 @@ span {
   transform: translateX(-50%);
   transition: bottom 1s, left 1s;
 }
-
+*/
 .social {
-  margin-left: 8%;
   margin-top: 100px;
 }
 
@@ -107,7 +107,7 @@ span {
 }
 
 .social a:hover {
-  color: orange;
+  color: #7510F7;
 }
 form {
   display: flex;
@@ -142,7 +142,7 @@ button {
 }
 
 button:hover {
-  background-color: #fc5185;
+  background-color: #7510F7;
 }
 
 .card-container {
@@ -196,7 +196,12 @@ button:hover {
 .card-content p {
   margin: 10px 0;
 }
-
+.horizontal-line {
+  border: none;
+  border-top: 1px solid gray;
+  width: 80%;
+  margin: 0 auto;
+}
 .card-content a {
   display: inline-block;
   padding: 8px 16px;
@@ -251,6 +256,12 @@ button:hover {
     width: auto;
     margin: 10px auto;
     padding-top: 10px;
+  }
+  .card img {
+    width: 100%;
+  }
+  .card1 img {
+    width: 100%;
   }
   .card-container {
     display: block;

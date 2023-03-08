@@ -20,45 +20,48 @@
   </head>
 
   <body>
-    <div class="hero" style="height: 100%">
-      {% block navbar %}
-
+    <div class="hero" style="height: 100%; text-align: center;">
       <nav class="navbar">
         <img src="../static/images/logo.png" class="logo pages" />
         <ul class="nav-links">
          
           <li><a href="#projects">PROJECTS</a></li>
-          <li><a href={{ url_for('contact_us') }}>Contactus</a></li>
+          <li><a href={{ url_for('contact_us') }} style="  border-radius: 30px;
+          color: #7510F7;
+            border: 2px solid #7510F7;
+            text-decoration: underline #7510F7;
+            padding: 15px;
+            width: 200px;
+            text-underline-offset: 4px;
+            height: 150px;">HIRE-ME</a></li>
         </ul>
       </nav>
-  
-      {% endblock %}
-
       <div class="detel">
-        <h2 style="padding-bottom: 12px">Hello&#x1F44B;,</h2>
+        <h1 style="padding-bottom: 12px">Hello&#x1F44B;,</h1>
         <h1>
-          I'<span style="color: orange" ;>m</span> Manan <span>Gandhi</span>
+          I'<span style="color: #7510F7" ;>m</span> Manan <span>Gandhi</span>
         </h1>
         <p>
           This is my official Portfolio website to showcase my all work <br />
           related to Flutter and A.I.
         </p>
-        <a href="../static/images/resume.pdf">Downdload CV</a>
+        <a href="../static/images/resume.pdf" style="margin-top: 60px;">Downdload CV</a>
       </div>
-      <div class="images">
+     <!-- <div class="images">
         <img src="../static/images/shape.png" class="shapepages" />
         <img src="../static/images/men.png" class="menpages" />
-      </div>
+      </div>-->
       <div class="social">
         <a href="http://linkedin.com/in/mananrg"
           ><i class="fab fa-linkedin"></i
         ></a>
         <a href="https://github.com/mananrg"><i class="fab fa-github"></i></a>
       </div>
-    </div>
-
    
-    <div id="projects" style="height: 100%; padding-top: 100px">
+      
+
+    </div>
+    <div id="projects" style="height: 100%; padding-top: 80px">
       <h1 class="title">PROJECTS</h1>
       <div class="card-container" style="margin: auto; align-items: center">
         {%for i in range(3)%} {% if i == 0 %}
@@ -79,7 +82,5 @@
         </div>
       </div>
     </div> 
-
-  
   </body>
 </html>
