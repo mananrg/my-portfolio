@@ -1,9 +1,10 @@
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personle Portfolio Website </title>
+    <title>Personle Portfolio Website</title>
 
     <link
       rel="stylesheet"
@@ -12,12 +13,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
     <link rel="icon" type="image/x-icon" href="../static/images/favicon.png" />
-
   </head>
   <body>
-    <div class="hero" style="height: 100%;">
+    <div class="hero" style="height: 100%">
       <nav class="navbar">
         <img src="../static/images/logo.png" class="logo pages" />
         <ul class="nav-links">
@@ -48,32 +51,39 @@
       </div>
     </div>
 
-    <div id="projects" style="height: 100%; padding-top: 100px">
-      <h1 style="text-align: center; padding-bottom: 30px; padding-top: 30px">
+    <div id="projects" style="height: 100%; padding-top: 60px">
+      <h1 style="text-align: center; padding-bottom: 30px; ">
         PROJECTS
       </h1>
-      <div class="card-container" style="margin: auto; align-items: center">
-        <div class="card" style="margin-right: 30px">
+   
+      <div class="card-container" style="margin: auto; align-items: center; " >
+        <table>
+          {%for i in range(3)%}
+          {% if i % 2 == 0 %}
+            <tr>
+            {% endif %}
+              <td>
+        <div class="card" style="padding-bottom: 90px;">
           <div class="card-image">
-            <img src="../static/images/chatbot.png" alt="Project 1 Image" />
-            <div class="card-content">
-              <h2>ChatGPT Mobile Application</h2>
-              <p>Designed a mobile application in ChatGPT</p>
-              <i><b>Tools: </b>Flutter, Dart, Firebase, OpenAI</i>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-image">
-            <img src="../static/images/solarpanel.png" alt="Project 2 Image" />
+            <img src={{ project_img[i] }} alt="Project 2 Image" />
           </div>
           <div class="card-content">
-            <h2>Solar Educational Application</h2>
-            <p>Android application made using Flutter</p>
-            <i><b>Tools: </b>Flutter, Dart</i>
+            <h2>{{ project_titles[i] }}</h2>
+            <p>{{ project_descriptions[i] }}</p>
+            <i><b>Tools: </b>{{ project_tools[i] }}</i>
           </div>
         </div>
+      </td>
+      {% if i % 2 == 1 or i == 3 - 1 %}
+      </tr>
+      {% endif %}
+        {%endfor%}
+      </table>
+
       </div>
+      <h3 style="text-align: right; padding-bottom: 30px; padding-right: 20px; ">
+        All Projects >>
+      </h3>
     </div>
   </body>
 </html>
