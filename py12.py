@@ -1,7 +1,5 @@
-
-# Importing flask module in the project is mandatory
-# An object of Flask class is our WSGI application.
-from flask import Flask, redirect, render_template	
+from flask import Flask, redirect, render_template	,request
+from sendmail import send_email
 projects=[
     {'1':{'title':"ChatGPT Mobile Application",'Description':"Designed a mobile application in ChatGPT","Tools":"Flutter, Dart, Firebase, OpenAI",'img':"../static/images/chatbot.png"}
      },
@@ -10,15 +8,23 @@ projects=[
          {'3':{'title':"Raspberrypi WebServer",'Description':"Designed a webserver with custom Mods and Firebase","Tools":"Flask, Python, HTML, CSS",'img':"../static/images/piserver.png"}
      },
 ]
-# Flask constructor takes the name of
-# current module (__name__) as argument.
+
 app = Flask(__name__)
- 
-# The route() function of the Flask class is a decorator,
-# which tells the application which URL should call
-# the associated function.
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'your_email@gmail.com'  # Replace with your Gmail address
+app.config['MAIL_PASSWORD'] = 'your_password'  # Replace with your Gmail password
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+
+
+@app.after_request
+def add_header(response):
+    response.headers['Cache-Control'] = 'no-cache'
+    return response
+
+
 @app.route('/')
-# ‘/’ URL is bound with hello_world() function.
 def hello_world():
     project_titles = []
     project_descriptions = []
@@ -31,10 +37,22 @@ def hello_world():
             project_tools.append(value['Tools'])
             project_img.append(value['img'])
     return render_template('index.html',project_titles=project_titles,project_descriptions=project_descriptions,project_tools=project_tools,project_img=project_img)
- 
-# main driver function
+
+
+@app.route('/contactus', methods=['GET', 'POST'])
+def contact_us():
+    if request.method == 'POST':
+
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        
+        send_email(name, email, message)
+        return 'Thank you for your submission!'
+    return render_template('contactus.html')
+  
+
+
 if __name__ == '__main__':
- 
-    # run() method of Flask class runs the application
-    # on the local development server.
-    app.run()
+    app.run(port=500)
+
