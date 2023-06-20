@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/var/www/html/my-portfolio/py12.py", line 1, in <module>
+    from flask import Flask, redirect, render_template	,request
+ImportError: No module named flask
+Traceback (most recent call last):
+  File "/var/www/html/my-portfolio/py12.py", line 1, in <module>
+    from flask import Flask, redirect, render_template	,request
+ImportError: No module named flask
+Traceback (most recent call last):
+  File "/var/www/html/my-portfolio/py12.py", line 1, in <module>
+    from flask import Flask, redirect, render_template	,request
+ImportError: No module named flask

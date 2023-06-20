@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personle Portfolio Website</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.png" />
+  </head>
+
+  <body>
+    <div class="hero" style="height: 100%; text-align: center;">
+      <nav class="navbar">
+        <img src="../static/images/logo.png" class="logo pages" />
+        <ul class="nav-links">
+         
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href={{ url_for('contact_us') }} style="  border-radius: 30px;
+          color: #7510F7;
+            border: 2px solid #7510F7;
+            text-decoration: underline #7510F7;
+            padding: 15px;
+            width: 200px;
+            text-underline-offset: 4px;
+            height: 150px;">HIRE-ME</a></li>
+        </ul>
+      </nav>
+      <div class="detel">
+        <h1 style="padding-bottom: 12px">Hello&#x1F44B;,</h1>
+        <h1>
+          I'<span style="color: #7510F7" ;>m</span> Manan <span>Gandhi</span>
+        </h1>
+        <p>
+          This is my official Portfolio website to showcase my all work <br />
+          related to Flutter and A.I.
+        </p>
+        <a href="../static/images/resume.pdf" style="margin-top: 60px;">Downdload CV</a>
+      </div>
+     <!-- <div class="images">
+        <img src="../static/images/shape.png" class="shapepages" />
+        <img src="../static/images/men.png" class="menpages" />
+      </div>-->
+      <div class="social">
+        <a href="http://linkedin.com/in/mananrg"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/mananrg"><i class="fab fa-github"></i></a>
+      </div>
+   
+      
+
+    </div>
+    <div id="projects" style="height: 100%; padding-top: 80px">
+      <h1 class="title">PROJECTS</h1>
+      <div class="card-container" style="margin: auto; align-items: center">
+        {%for i in range(3)%} {% if i == 0 %}
+        <div class="card1">
+          {% else %}
+          <div class="card">
+            {% endif %}
+            <div class="card-image">
+              <img src={{ project_img[i] }} alt="Project 2 Image" />
+            </div>
+            <div class="card-content">
+              <h2>{{ project_titles[i] }}</h2>
+              <p>{{ project_descriptions[i] }}</p>
+              <i><b>Tools: </b>{{ project_tools[i] }}</i>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div> 
+  </body>
+</html>
